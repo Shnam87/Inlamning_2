@@ -1,0 +1,54 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Min budgetkalkyl</title>
+    <link rel="stylesheet" href="main.css">
+    <script src="main.js" defer></script>
+</head>
+<body>
+    <header>
+        <h1>Budgetkalkylen</h1>
+    </header>
+    <main>
+        <form>
+            <select name="" id="inORout">
+                <option value="in"> + </option>
+                <option value="out"> - </option>
+            </select>
+            <input type="text" name="" id="addToList" placeholder="Vad vill du lägga till?">
+            <input type="number" name="" id="value" placeholder="Belopp ?">
+        </form>
+        <div class="btn">
+            <button id="adding">Lägg till ny rad</button>
+            <button id="removing">Ta bort den senaste</button>
+            <button id="clearAll">Rensa allt</button>
+        </div>
+        <section id="left">
+            <h3 class="inc">Inkomst listan:</h3>
+            <table class="incomeList">
+                <tr>
+                    <th>Namn:</th>
+                    <th>Belopp:</th>
+                </tr>
+            </table>
+        </section>
+        <section id="middle">
+            <h3 class="upp"> &#x21E7; </h3>
+            <h3 class="down"> &#x21E9; </h3>
+        </section>
+        <section id="right">
+            <h3 class="cost">Utgift listan:</h3>
+            <table class="costList">
+                <tr>
+                    <th>Namn:</th>
+                    <th>Belopp:</th>
+                </tr>
+            </table>
+        </section>
+    </main>
+    <footer></footer>
+    
+</body>
+</html>
