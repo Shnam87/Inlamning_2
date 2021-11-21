@@ -1,0 +1,66 @@
+* {
+    margin: 5px;
+    padding: 5px;
+    font-family: $myFont;
+    text-align: center;
+}
+
+body {
+    background-image: url($backgrundImage);
+    background-size: 24%;
+    background-repeat: no-repeat;
+}
+
+header {
+    font-size:32px;
+    text-shadow: 6px 6px 12px;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.listSection {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.balance_T {
+    font-size:32px;
+    text-shadow: 6px 6px 12px;
+}
+
+.inc, .upp {
+    text-shadow: 3px 3px 15px green;
+}
+
+.cost, .down {
+    text-shadow: 3px 3px 15px red;
+}
+
+.upp {
+    position: relative;
+    animation-name: goingUpp;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+@keyframes goingUpp {
+    from {top: 30px;}
+    to {top: 0px;}
+}
+
+.down {
+    position: relative;
+    animation-name: goingDown;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+@keyframes goingDown {
+    from {top: 0px;}
+    to {top: 30px;}
+}

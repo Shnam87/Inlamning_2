@@ -13,42 +13,35 @@
     </header>
     <main>
         <form>
-            <select name="" id="inORout">
+            <select name="">
                 <option value="in"> + </option>
                 <option value="out"> - </option>
             </select>
-            <input type="text" name="" id="addToList" placeholder="Vad vill du lägga till?">
-            <input type="number" name="" id="value" placeholder="Belopp ?">
+            <input type="text" name="" id="inputName" placeholder="Vad vill du lägga till?" required>
+            <input type="number" name="" id="inputAmount" placeholder="Belopp ?" required>
         </form>
         <div class="btn">
             <button id="adding">Lägg till ny rad</button>
             <button id="removing">Ta bort den senaste</button>
             <button id="clearAll">Rensa allt</button>
         </div>
-        <section id="left">
-            <h3 class="inc">Inkomst listan:</h3>
-            <table class="incomeList">
-                <tr>
-                    <th>Namn:</th>
-                    <th>Belopp:</th>
-                </tr>
-            </table>
+        <section class="listSection">
+            <section>
+                <h2 class="inc"> <span class="upp"> &#x21E7; </span> Inkomst listan <span class="upp"> &#x21E7; </span> </h2> 
+                <div class="incomeList"> </div>
+            </section>
+            <section>
+                <h2 class="cost"> <span class="down"> &#x21E9; </span> Utgift listan <span class="down"> &#x21E9; </span> </h2>
+                <div class="costList"> </div>
+            </section>
         </section>
-        <section id="middle">
-            <h3 class="upp"> &#x21E7; </h3>
-            <h3 class="down"> &#x21E9; </h3>
-        </section>
-        <section id="right">
-            <h3 class="cost">Utgift listan:</h3>
-            <table class="costList">
-                <tr>
-                    <th>Namn:</th>
-                    <th>Belopp:</th>
-                </tr>
-            </table>
-        </section>
+        <h2 class="balance_T">Aktuell tillgänglig budget:</h2>
+        <h2 class="balance"></h2>
     </main>
-    <footer></footer>
+
+    <footer>
+        
+    </footer>
     
 </body>
 </html>

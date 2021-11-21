@@ -4,6 +4,7 @@
   "description": "Bygger en dynamisk och responsiv budgetkalkyl webbplats",
   "main": "main.js",
   "scripts": {
+    "scss": "node-sass scss/main.scss main.css -w",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
