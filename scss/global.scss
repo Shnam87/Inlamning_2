@@ -7,7 +7,7 @@
 
 body {
     background-image: url($backgrundImage);
-    background-size: 24%;
+    background-size: 23%;
     background-repeat: no-repeat;
 }
 
@@ -21,13 +21,13 @@ footer {
     background-image: url($footerBG);
     background-size: contain;
     background-repeat: repeat-x;
-    height: 15%;
+    height: 12%;
     bottom: 0;
     left: 0;
     right: 0;
     margin: 0px;
     padding: 0px;
-
+    z-index: -1;
 }
 
 main {
@@ -36,6 +36,7 @@ main {
     align-items: center;
     overflow: visible;
 }
+
 select, #inputName, #inputAmount,
 #adding, #removing, #clearAll {
     outline: 2px ridge grey;
@@ -49,25 +50,12 @@ form, .btn, .listSection, .balance_T, .balance {
     display: flex;
     flex-direction: row;
     justify-content: center;
-    
 }
 
 .balance_T {
     font-size:32px;
     text-shadow: 6px 6px 12px;
-    
 }
-
-/* test */
-/*
-footerBG {
-    background: url($budgetDeficitBG1), url($budgetDeficitBG2);
-    background-repeat: no-repeat;
-    background-position: left, right;
-}
-*/
-/* test */
-
 
 .inc, .upp {
     text-shadow: 3px 3px 15px green;

@@ -6,7 +6,7 @@
 
 body {
   background-image: url("./img/1031.png");
-  background-size: 24%;
+  background-size: 23%;
   background-repeat: no-repeat; }
 
 header {
@@ -18,12 +18,13 @@ footer {
   background-image: url("./img/rounded-lines-pattern.png");
   background-size: contain;
   background-repeat: repeat-x;
-  height: 15%;
+  height: 12%;
   bottom: 0;
   left: 0;
   right: 0;
   margin: 0px;
-  padding: 0px; }
+  padding: 0px;
+  z-index: -1; }
 
 main {
   display: flex;
@@ -47,15 +48,6 @@ form, .btn, .listSection, .balance_T, .balance {
   font-size: 32px;
   text-shadow: 6px 6px 12px; }
 
-/* test */
-/*
-footerBG {
-    background: url($budgetDeficitBG1), url($budgetDeficitBG2);
-    background-repeat: no-repeat;
-    background-position: left, right;
-}
-*/
-/* test */
 .inc, .upp {
   text-shadow: 3px 3px 15px green; }
 
