@@ -1,12 +1,26 @@
+// Fyra addEventListener som väntar på att triggas
 document.querySelector("#adding").addEventListener("click", addingToList);
 document.querySelector("#removing").addEventListener("click", removeFromList);
 document.querySelector("#clearAll").addEventListener("click", clearList);
+document.querySelector("#inputAmount").addEventListener("keyup", disabledBTN);
 
+// Några globala variabler
 const income_List= [];
 const cost_List= [];
-
 let img= document.createElement("IMG");
+let btn = document.querySelector("#adding");
+btn.disabled = true;
 
+// Funktionen för att inaktivera "lägga till"-knappen
+function disabledBTN() {    
+    if(document.querySelector("#inputAmount").value === "") {
+        btn.disabled = true;
+    } else {
+        btn.disabled = false;
+    }
+}
+
+// Funktionen för att lägga till användarens inmatning i den valda listan
 function addingToList(e) {
     e.preventDefault();
 
@@ -16,7 +30,7 @@ function addingToList(e) {
 
     const clear_NameField= document.querySelector("#inputName").value = "";
     const clear_AmountField= document.querySelector("#inputAmount").value = "";
-   // console.log(type.value);
+
     if (type.value=="in") {
         document.querySelector(".incomeList").innerHTML += `<li class="incomeLi"> ${input_Name} för: ${input_Amount} </li>`
         income_List.push(input_Amount);
@@ -28,46 +42,42 @@ function addingToList(e) {
         cost_List.push(input_Amount);
         clear_NameField;
         clear_AmountField;
-    // console.log(cost_List);
+        console.log(cost_List);
     }
+    sum();  //Beräkna summan
 
-    sum();
+    disabledBTN();  // Återigen inaktivera "lägga till"-knappen 
 }
 
+// Funktionen för att ta bort den senaste raden av listorna
 function removeFromList(e) {
     e.preventDefault();
-
     // console.log(income_List);
 
     const i= document.querySelector(".incomeList");
-    const incomeEntry= document.querySelector("li");
-
+    const incomeEntry= document.querySelector("li:last-child");
     // console.log(incomeEntry);
 
     if (income_List.length > 0) {
         i.removeChild(incomeEntry);
         income_List.pop();
+        sum();
     }
-
-    sum();
-
     // console.log(income_List);
 
     const c= document.querySelector(".costList");
-    const costEntry= document.querySelector(".costLi");
-
+    const costEntry= document.querySelector(".costLi:last-child");
     // console.log(costEntry);
 
     if (cost_List.length > 0) {
         c.removeChild(costEntry);
         cost_List.pop();
+        sum();
     }
-
     // console.log(cost_List);
-
-    sum();
 }
 
+// Funktionen för att rensa listan helt och hållet
 function clearList(e) {
     e.preventDefault();
 
@@ -81,6 +91,7 @@ function clearList(e) {
     img.removeAttribute("src");
 }
 
+// Funktionen som Beräkna summan av inkomster och Utgifter, samt ändrar textskuggan och bilden beroende på svaret.
 function sum() {
     let incomeSum= 0;
     let costSum= 0;
@@ -90,29 +101,26 @@ function sum() {
             incomeSum += parseFloat(e)
         }
     )
-    // console.log(incomeSum);
+    console.log(incomeSum);
 
     cost_List.map(
         (e) => {
             costSum += parseFloat(e);
         }
     )
-    // console.log(costSum);
-
-    document.querySelector(".balance").innerHTML = `<h2> ${incomeSum - costSum} </h2>`
-
-    let finalSum= document.querySelector(".balance").textContent;
-    // console.log(finalSum);
+    console.log(costSum);
+    
+    let finalSum= incomeSum - costSum;
+    console.log(finalSum);
 
     if (finalSum > 0) {
+        document.querySelector(".balance").innerHTML = `<h2 class="positive"> ${incomeSum - costSum} </h2>`
         img.setAttribute("src", "./img/300782.png");
-        // console.log("Bravo");
-        
+        console.log("Bravo");
     } else {
+        document.querySelector(".balance").innerHTML = `<h2 class="negative"> ${incomeSum - costSum} </h2>`
         img.setAttribute("src", "./img/300812.png");
-        // console.log("Inte bra");
-        
+        console.log("Inte bra");
     }
     document.body.appendChild(img);
-    
 }

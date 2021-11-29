@@ -52,6 +52,10 @@ form, .btn, .listSection, .balance_T, .balance {
     justify-content: center;
 }
 
+.incomeLi, .costLi {
+    font-size: 18px;
+}
+
 .balance_T {
     font-size:32px;
     text-shadow: 6px 6px 12px;
@@ -61,8 +65,18 @@ form, .btn, .listSection, .balance_T, .balance {
     text-shadow: 3px 3px 15px green;
 }
 
+.positive {
+    color: white;
+    text-shadow: 1px 1px 1px black, 0 0 24px green, 0 0 5px darkgreen;
+}
+
 .cost, .down {
     text-shadow: 3px 3px 15px red;
+}
+
+.negative {
+    color: white;
+    text-shadow: 1px 1px 1px black, 0 0 24px red, 0 0 5px darkred;
 }
 
 .upp {

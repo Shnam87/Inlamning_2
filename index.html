@@ -12,6 +12,7 @@
         <h1>Budgetkalkylen</h1>
     </header>
     <main>
+        <!-- Formulären -->
         <form>
             <select name="">
                 <option value="in"> + </option>
@@ -20,23 +21,26 @@
             <input type="text" name="" id="inputName" placeholder="Vad vill du lägga till?" required>
             <input type="number" name="" id="inputAmount" placeholder="Belopp ?" required>
         </form>
+        <!-- Knapparna -->
         <div class="btn">
             <button id="adding">Lägg till ny rad</button>
             <button id="removing">Ta bort den senaste</button>
             <button id="clearAll">Rensa allt</button>
         </div>
+        <!-- Avsnittet med listor -->
         <section class="listSection">
             <section>
                 <h2 class="inc"> <span class="upp"> &#x21E7; </span> Inkomst listan <span class="upp"> &#x21E7; </span> </h2> 
-                <div class="incomeList"> </div>
+                <div class="incomeList"> <!-- Här genereras en inkomstlista --> </div>
             </section>
             <section>
                 <h2 class="cost"> <span class="down"> &#x21E9; </span> Utgift listan <span class="down"> &#x21E9; </span> </h2>
-                <div class="costList"> </div>
+                <div class="costList"> <!-- Här genereras en kostnadslista --> </div>
             </section>
         </section>
         <h2 class="balance_T">Aktuell tillgänglig budget:</h2>
-        <h2 class="balance"></h2>
+        <!-- Under "balance" klassen kommer resultatet att visas -->
+        <h2 class="balance"> </h2>
     </main>
 
     <footer>
